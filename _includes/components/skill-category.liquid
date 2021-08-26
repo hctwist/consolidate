@@ -1,0 +1,25 @@
+<h3 class="skill-category-heading project-subheading">{{ heading }}</h3>
+
+<div class="skills">
+
+    {%- for skill in skills -%}
+
+        {%- if skill.category == category -%}
+
+            <div>
+                <p class="skill-title">{{ skill.title }}</p>
+
+                <img class="skill-icon" src="/images/skills/{{ skill.skill }}.png" />
+
+                <div class="skill-level-container">
+                    {%- if skill.level >= 0.7 -%}
+                        {% assign levelStyle = "skill-level skill-level-high" %}
+                    {%- else -%}
+                        {% assign levelStyle = "skill-level" %}
+                    {%- endif -%}
+                    <div class="{{ levelStyle }}" style="width: calc({{ skill.level }} * 100%)"></div>
+                </div>
+            </div>
+        {%- endif -%}
+    {%- endfor -%}
+</div>

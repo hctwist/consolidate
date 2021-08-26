@@ -1,0 +1,28 @@
+/* Status tag */
+.status-tag {
+    padding: 6px 12px;
+
+    border-radius: var(--corner-radius);
+    font-family: "Lato", sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.status-tag-concept {
+    background-color: #D19FC7;
+}
+
+.status-tag-alpha {
+    background-color: #ade1e5;
+}
+
+.status-tag-beta {
+    background-color: #8BE5C7;
+}
+
+.status-tag-released {
+    background-color: #71eab4;
+}
+
+.status-tag-dormant, .status-tag-archived {
+    background-color: #d6d6d6;
+}

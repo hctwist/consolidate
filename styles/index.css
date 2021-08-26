@@ -1,0 +1,154 @@
+#main-display-text {
+    text-align: center;
+
+    margin-bottom: 32px;
+    font-size: 5.5em;
+
+    font-family: "Lato", sans-serif;
+}
+
+#main-display-text span {
+    font-family: inherit;
+    color: var(--primary-color);
+}
+
+#sub-display-text {
+    --gap: 32px;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#sub-display-text p {
+    font-family: "Lato", sans-serif;
+    font-size: 1.5rem;
+}
+
+#sub-display-text .prefix {
+    color: var(--text-color-secondary);
+}
+
+#sub-display-text .suffix {
+    text-align: center;
+
+    padding: 8px 16px;
+    min-width: 12em;
+
+    color: rgba(0, 0, 0, 0.95);
+    border-radius: var(--corner-radius);
+    background: var(--primary-color);
+}
+
+#timeline {
+    --pipe-width: 4px;
+
+    position: relative;
+
+    width: 70%;
+    margin: 0 auto;
+    margin-top: var(--content-margin);
+    padding-bottom: var(--layout-margin-bottom);
+}
+
+#timeline::before {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    width: var(--pipe-width);
+    height: 100%;
+    margin-left: -3px;
+
+    background-color: var(--panel-color);
+}
+
+.date .content {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 24px;
+
+    font-family: "Lato", sans-serif;
+    font-size: 1.125em;
+    border-radius: 1000px;
+    background: #FFF;
+    color: #222;
+}
+
+.event {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    width:50%;
+}
+
+.event.right {
+    left: 50%;
+}
+
+.event .panel {
+    flex: 1;
+}
+
+.event .content {
+    font-size: 1.125rem;
+}
+
+.event .content.with-subheading {
+    margin-bottom: 8px;
+}
+
+.event .pipe {
+    height: var(--pipe-width);
+    width: 20%;
+
+    background-color: var(--panel-color);
+}
+
+@media(max-width: 1600px) {
+
+    #timeline {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    #main-display-text {
+        font-size: 4.5rem;
+    }
+
+    #timeline {
+        width: 100%;
+    }
+
+    #sub-display-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+
+    #main-display-text {
+        font-size: 3.5rem;
+    }
+
+    .event {
+        width: 100%;
+    }
+
+    .event.right {
+        left: 0%;
+    }
+
+    .event .pipe {
+        display: none;
+    }
+}

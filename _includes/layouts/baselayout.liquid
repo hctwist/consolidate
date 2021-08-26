@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#151716">
+        <meta name="msapplication-TileColor" content="#00aba9">
+
+        <title>{{ title }}</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/styles/base.css" />
+        <link rel="stylesheet" href="/styles/baselayout.css" />
+        <link rel="stylesheet" href="/styles/status-tags.css" />
+        {%- for style in styles -%}
+        <link rel="stylesheet" href="{{ style }}" />
+        {%- endfor -%}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- PhotoSwipe -->
+        <link rel="stylesheet" href="/photo-swipe/photoswipe.css">
+        <link rel="stylesheet" href="/photo-swipe/default-skin/default-skin.css">
+        <script src="/photo-swipe/photoswipe.min.js"></script>
+        <script src="/photo-swipe/photoswipe-ui-default.min.js"></script>
+    </head>
+
+    <body>
+
+        <div id="main-header-container">
+
+            <header id="main-header" class="main-content-grid">
+
+                <a id="main-logo" href="/">
+
+                    <img src="/images/logo.png" alt="Logo" />
+                    <img class="colored" src="/images/logo-colored.png" />
+                </a>
+
+                <button type="button" id="hamburger" onclick="onClickHamburger()"><img src="/images/icons/hamburger.svg" alt="Menu button" /></button>
+
+                <div id="main-navigation">
+
+                    <nav>
+                        <ul>
+                            <li><a href="/about">ABOUT</a></li>
+                            <li><a href="/projects">PROJECTS</a></li>
+                        </ul>
+                    </nav>
+
+                    <div id="main-links">
+
+                        <a href="mailto:henrytwistprojects@gmail.com">
+
+                            <img src="/images/icons/email.png" alt="Email me" />
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/henry-twist" target="_blank">
+
+                            <img src="/images/icons/linkedin.png" alt="LinkedIn" />
+                        </a>
+
+                        <a href="https://github.com/hctwist" target="_blank">
+
+                            <img src="/images/icons/github.png" alt="GitHub" />
+                        </a>
+
+                        <a href="https://stackoverflow.com/users/10082297/henry-twist" target="_blank">
+
+                            <img src="/images/icons/stackoverflow.png" alt="StackOverflow" />
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <div class="main-content-grid" id="main-content">
+
+            {{ content }}
+        </div>
+
+        <div id="hamburger-menu-cover" onclick="onClickHamburger()"></div>
+
+        <script src="/js/hamburger.js"></script>
+    </body>
+</html>

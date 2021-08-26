@@ -1,0 +1,47 @@
+#projects-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 2.5vh;
+    margin-top: var(--layout-margin-top);
+    margin-bottom: var(--layout-margin-bottom);
+}
+
+.project {
+    padding: 0;
+}
+
+.project img {
+    width: 100%;
+
+    border-radius: var(--corner-radius) var(--corner-radius) 0 0;
+}
+
+.project-heading {
+    margin: var(--panel-padding-horizontal);
+    margin-bottom: 0;
+}
+
+.project-extras {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: var(--panel-padding-horizontal);
+    margin-top: 16px;
+}
+
+.project-subheading, .status-tag {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.status-tag {
+    margin-left: 32px;
+}
+
+@media (max-width: 1200px) {
+    #projects-container {
+        grid-template-columns: auto;
+    }
+}

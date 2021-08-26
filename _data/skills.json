@@ -1,0 +1,146 @@
+[
+    {
+        "skill": "c-sharp",
+        "title": "C#",
+        "level": 0.5,
+        "category": "programming-language"
+    },
+    {
+        "skill": "c-plus-plus",
+        "title": "C++",
+        "level": 0.05,
+        "category": "programming-language"
+    },
+    {
+        "skill": "fortran90",
+        "title": "Fortran 90",
+        "level": 0.4,
+        "category": "programming-language"
+    },
+    {
+        "skill": "java",
+        "title": "Java",
+        "level": 0.75,
+        "category": "programming-language"
+    },
+    {
+        "skill": "javascript",
+        "title": "JavaScript",
+        "level": 0.2,
+        "category": "programming-language"
+    },
+    {
+        "skill": "kotlin",
+        "title": "Kotlin",
+        "level": 0.8,
+        "category": "programming-language"
+    },
+    {
+        "skill": "matlab",
+        "title": "MATLAB",
+        "level": 0.7,
+        "category": "programming-language"
+    },
+    {
+        "skill": "python",
+        "title": "Python",
+        "level": 0.5,
+        "category": "programming-language"
+    },
+    {
+        "skill": "r",
+        "title": "R",
+        "level": 0.6,
+        "category": "programming-language"
+    },
+    {
+        "skill": "english",
+        "title": "English",
+        "level": 1,
+        "category": "language"
+    },
+    {
+        "skill": "french",
+        "title": "French",
+        "level": 0.5,
+        "category": "language"
+    },
+    {
+        "skill": "spanish",
+        "title": "Spanish",
+        "level": 0.3,
+        "category": "language"
+    },
+    {
+        "skill": "android",
+        "title": "Android",
+        "level": 0.8,
+        "category": "platform"
+    },
+    {
+        "skill": "uwp",
+        "title": "UWP",
+        "level": 0.4,
+        "category": "platform"
+    },
+    {
+        "skill": "cinema4d",
+        "title": "Cinema 4D",
+        "level": 0.2,
+        "category": "software"
+    },
+    {
+        "skill": "excel",
+        "title": "Excel",
+        "level": 0.6,
+        "category": "software"
+    },
+    {
+        "skill": "git",
+        "title": "Git",
+        "level": 0.2,
+        "category": "software"
+    },
+    {
+        "skill": "illustrator",
+        "title": "Illustrator",
+        "level": 0.25,
+        "category": "software"
+    },
+    {
+        "skill": "photoshop",
+        "title": "Photoshop",
+        "level": 0.8,
+        "category": "software"
+    },
+    {
+        "skill": "css3",
+        "title": "CSS3",
+        "level": 0.65,
+        "category": "other"
+    },
+    {
+        "skill": "firebase",
+        "title": "Firebase",
+        "level": 0.45,
+        "category": "other"
+    },
+    {
+        "skill": "html5",
+        "title": "HTML5",
+        "level": 0.9,
+        "category": "other"
+    },
+    {
+        "skill": "latex",
+        "title": "LaTeX",
+        "level": 0.65,
+        "category": "other"
+    },
+    {
+        "skill": "sqlite",
+        "title": "SQLite",
+        "level": 0.5,
+        "category": "other"
+    }
+]

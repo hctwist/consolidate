@@ -1,0 +1,23 @@
+---
+layout: layouts/baselayout
+styles: projects.css
+title: Projects | Henry Twist
+---
+
+<div id="projects-container">
+
+    {%- assign projects = collections.project | sortprojects -%}
+    {%- for proj in projects -%}
+        <a class="project panel" href="{{ proj.url }}">
+
+            <img src="{{ proj.data.shots[0].source }}" />
+
+            <h2 class="project-heading">{{ proj.data.heading }}</h2>
+
+            <div class="project-extras">
+                <h3 class="project-subheading">{{ proj.data.subheading |  safeupcase | spaceifempty }}</h3>
+                {%- include components/status-tag, status: proj.data.status -%}
+            </div>
+        </a>
+    {%- endfor -%}
+</div>

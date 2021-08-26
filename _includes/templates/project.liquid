@@ -1,0 +1,193 @@
+---
+layout: layouts/baselayout
+styles: /project/project.css
+---
+
+<div id="project-header-container">
+
+    <div id="project-heading-container">
+
+        <h1 id="project-heading">{{ heading }}</h1>
+        <h3>{{ subheading | safeupcase }}</h3>
+    </div>
+    {%- include components/status-tag -%}
+</div>
+
+<div id="project-content">
+
+    {{ content }}
+</div>
+
+<div id="project-images">
+
+    {%- for shot in shots -%}
+
+        <div class="project-image {{ shot.type }}">
+
+            <img src="{{ shot.source }}"/>
+
+            {%- if shot.tag != blank -%}
+
+                <p>{{ shot.tag }}</p>
+            {%- endif -%}
+        </div>
+    {%- endfor -%}
+</div>
+
+<div id="project-sources" class="flex-gap">
+
+    {%- if github-repository != blank -%}
+
+        <a class="project-badge" href="{{ github-repository }}" target="_blank">
+            <img alt="View the code on GitHub" src="/images/badges/github.png" />
+        </a>
+    {%- endif -%}
+
+    {%- if play-store-url != blank -%}
+
+        <a class="project-badge" href="{{ play-store-url }}&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">
+            <img alt="Get it on Google Play" src="/images/badges/play-store.png" />
+        </a>
+    {%- endif -%}
+
+    {%- if microsoft-store-id != blank -%}
+
+        <a class="project-badge" href="//www.microsoft.com/store/apps/{{ microsoft-store-id }}?cid=storebadge&ocid=badge" target="_blank">
+            <img src="/images/badges/microsoft-store.png" alt="Get it on the Microsoft Store" />
+        </a>
+    {%- endif -%}
+
+    {%- if open != blank -%}
+
+        <a class="icon-button" href="{{ open }}" target="_blank">
+
+            <img src="/images/icons/open.svg" />
+            <p>Open</p>
+        </a>
+    {%- endif -%}
+</div>
+
+<div id="project-skills" class="flex-gap">
+
+    {%- for skill in skills -%}
+
+        {%- if skills-used contains skill.skill -%}
+
+            <img src="/images/skills/{{ skill.skill }}.png" alt="{{ skill.title }}" class="skill" />
+        {%- endif -%}
+    {%- endfor -%}
+</div>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    const swipeDiv = $(".pswp")[0];
+
+    const items = [];
+
+    let imageWidth = 0;
+    let imageHeight = 720;
+
+    {%- for shot in shots -%}
+
+        if ("{{ shot.type }}" == "banner") {
+
+            imageWidth = 2160;
+        }
+        else {
+
+            imageWidth = 1080;
+        }
+
+        items.push({
+            src: "{{ shot.source }}",
+            w: imageWidth,
+            h: imageHeight
+        });
+    {%- endfor -%}
+
+    $(".project-image").each(function(index) {
+
+        const image = $(this);
+
+        image.click(function() {
+
+            const options = {
+                getThumbBoundsFn: function() {
+
+                    return { x: image.offset().left, y: image.offset().top, w: image.width() };
+                },
+                index: index,
+                showHideOpacity: true
+            };
+            const gallery = new PhotoSwipe(swipeDiv, PhotoSwipeUI_Default, items, options);
+            gallery.init();
+        });
+    });
+</script>

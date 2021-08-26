@@ -1,0 +1,71 @@
+---
+layout: layouts/baselayout
+title: Henry Twist
+styles: styles/index.css
+---
+
+<p id="main-display-text">Hello<span>.</span></p>
+
+<div id="sub-display-text" class="flex-gap">
+
+    <p class="prefix">I AM A</p>
+    <p class="suffix">MATHEMATICIAN. DESIGNER. DEVELOPER. TECH ENTHUSIAST</p>
+</div>
+
+<div id="timeline">
+
+    {%- assign right = true -%}
+    {%- for entry in timeline -%}
+
+        {%- if entry.type == "date" -%}
+
+            <div class="date">
+                <p class="content">{{ entry.content }}</p>
+            </div>
+        {%- elsif entry.type == "event" -%}
+
+            {%- if entry.subheading == blank or entry.content == blank -%}
+                {%- assign contentClass = "content" -%}
+            {%- else -%}
+                {%- assign contentClass = "content with-subheading" -%}
+            {%- endif -%}
+
+            {% capture pipe %}<div class="pipe"></div>{% endcapture %}
+            {% capture content %}<p class="{{ contentClass }}">{{ entry.content }}</p>{% endcapture %}
+            {% capture subheading %}<h3>{{ entry.subheading | safeupcase }}</h3>{% endcapture %}
+
+            {%- if entry.link == blank -%}
+                {% capture boxStart %}<div class="panel">{% endcapture %}
+                {% capture boxEnd %}</div>{% endcapture %}
+            {%- else -%}
+                {% capture boxStart %}<a href="{{ entry.link }}" class="panel">{% endcapture %}
+                {% capture boxEnd %}</a>{% endcapture %}
+            {%- endif -%}
+
+            {%- if right -%}
+                <div class="event right">
+                    {{ pipe }}
+                    {{ boxStart }}
+                        {{ content }}
+                        {{ subheading }}
+                    {{ boxEnd }}
+                </div>
+                {%- assign right = false -%}
+            {%- else -%}
+                <div class="event left">
+                    {{ boxStart }}
+                        {{ content }}
+                        {{ subheading }}
+                    {{ boxEnd }}
+                    {{ pipe }}
+                </div>
+                {%- assign right = true -%}
+            {%- endif -%}
+
+        {%- endif -%}
+
+    {%- endfor -%}
+</div>
+
+<script src="/js/timeline.js"></script>
+<script src="/js/display-text.js"></script>

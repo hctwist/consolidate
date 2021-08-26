@@ -1,0 +1,153 @@
+/*
+
+Breakpoints:
+1601px and upwards : PC
+1201px - 1600px : Laptop
+701px - 1200px : Tablet
+700px and below : Mobile
+
+*/
+
+:root {
+    --primary-color: #54c9aa;
+    --secondary-color: #5bd6e4;
+
+    --heading-font: "Lato", sans-serif;
+
+    --text-color-primary: rgba(255, 255, 255, 0.95);
+    --text-color-secondary: rgba(255, 255, 255, 0.6);
+    --text-color-inverse: rgba(0, 0, 0, 0.9);
+
+    --panel-color: #1E1F1F;
+    --panel-color-hover: #282A2A;
+    --panel-padding-horizontal: 24px;
+    --panel-padding-vertical: 16px;
+
+    --gutter: 7.5vw;
+
+    --standard-margin: 48px;
+
+    --layout-margin-top: 10vh;
+    --layout-margin-bottom: 156px;
+
+    --content-margin: 7.5vh;
+
+    --corner-radius: 3px;
+
+    --medium-icon-size: 24px;
+    --large-icon-size: 32px;
+    --main-icon-opacity: 0.95;
+    --icon-opacity: 0.5;
+
+    --transition-duration-panel: 200ms;
+    --transition-duration-shape: 250ms;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+
+    color: var(--text-color-primary);
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    background-color: #151716;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-family: "Lato", sans-serif;
+}
+
+h2 {
+    font-size: 1.625em;
+    font-family: "Lato", sans-serif;
+}
+
+h3 {
+    font-size: 0.875em;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+    appearance: none;
+    background: none;
+    border: none;
+}
+
+::selection {
+    background-color: var(--secondary-color);
+}
+
+/* Grid */
+.main-content-grid {
+    margin: 0 var(--gutter);
+}
+
+
+/* Panel */
+.panel {
+    padding: var(--panel-padding-vertical) var(--panel-padding-horizontal);
+    border-radius: var(--corner-radius);
+
+    background-color: var(--panel-color);
+}
+
+a.panel {
+    text-decoration: none;
+    transition: background-color var(--transition-duration-panel);
+}
+
+a.panel:hover {
+    background-color: var(--panel-color-hover);
+}
+
+
+/* Project icon */
+.project-icon {
+    width: 48px;
+    height: 48px;
+}
+
+
+/* Icon button */
+.icon-button {
+    display: inline-block;
+
+    padding: 16px 24px;
+
+    text-decoration: none;
+    border-radius: var(--corner-radius);
+    background: var(--secondary-color);
+}
+
+.icon-button > * {
+    display: inline;
+    vertical-align: middle;
+}
+
+.icon-button img {
+    width: var(--medium-icon-size);
+    height: var(--medium-icon-size);
+
+    opacity: 0.9;
+}
+
+.icon-button p {
+    margin-left: 16px;
+
+    font-family: var(--heading-font);
+    color: var(--text-color-inverse);
+}
+
+
+/* Flex gap workaround */
+.flex-gap:not(:empty) {
+    margin: calc(var(--gap) * -1) 0 0 calc(var(--gap) * -1);
+}
+
+.flex-gap > * {
+    margin: var(--gap) 0 0 var(--gap);
+}

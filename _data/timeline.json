@@ -1,0 +1,151 @@
+[
+    {
+        "type": "date",
+        "content": "Now"
+    },
+    {
+        "type": "event",
+        "subheading": "Project Consolidate",
+        "content": "henrytwist.uk launched",
+        "link": "/project/project-consolidate"
+    },
+    {
+        "type": "event",
+        "subheading": "Project Acquiesce",
+        "content": "Learnt C# and started working on UWP apps",
+        "link": "/project/project-acquiesce"
+    },
+    {
+        "type": "date",
+        "content": "2021"
+    },
+    {
+        "type": "event",
+        "content": "Built and setup my first home server"
+    },
+    {
+        "type": "event",
+        "subheading": "Project Barry",
+        "content": "Began in-depth research on app architecture",
+        "link": "/project/project-barry"
+    },
+    {
+        "type": "event",
+        "subheading": "Project Phoenix",
+        "content": "Revived Project Weekly with a more scalable app architecture",
+        "link": "/project/weekly"
+    },
+    {
+        "type": "event",
+        "subheading": "Project Iguana",
+        "content": "Gained experience working with Firebase whilst making a POS system"
+    },
+    {
+        "type": "date",
+        "content": "2020"
+    },
+    {
+        "type": "event",
+        "subheading": "FullCart",
+        "content": "Initial release of FullCart",
+        "link": "/project/fullcart"
+    },
+    {
+        "type": "event",
+        "content": "Graduated with a first class masters degree in Maths"
+    },
+    {
+        "type": "event",
+        "subheading": "Optimisation of Neural Network Architecture",
+        "content": "Completed my dissertation",
+        "link": "/project/dissertation"
+    },
+    {
+        "type": "date",
+        "content": "2019"
+    },
+    {
+        "type": "event",
+        "subheading": "Project Weekly",
+        "content": "Attempted to work on a third app",
+        "link": "/project/weekly"
+    },
+    {
+        "type": "event",
+        "subheading": "FullCart",
+        "content": "Began developing a second Android app",
+        "link": "/project/fullcart"
+    },
+    {
+        "type": "date",
+        "content": "2018"
+    },
+    {
+        "type": "event",
+        "content": "Started a BSc in Mathematics"
+    },
+    {
+        "type": "event",
+        "content": "Published my first Android app to the Play Store"
+    },
+    {
+        "type": "event",
+        "content": "Made my first Android app - PhysIt"
+    },
+    {
+        "type": "date",
+        "content": "2015"
+    },
+    {
+        "type": "event",
+        "content": "Started freelance web design"
+    },
+    {
+        "type": "event",
+        "content": "Launched a cipher solving website for the National Cipher Challenge"
+    },
+    {
+        "type": "event",
+        "content": "Built my first PC"
+    },
+    {
+        "type": "date",
+        "content": "2014"
+    },
+    {
+        "type": "event",
+        "content": "Experimented with 3D game development in Unity"
+    },
+    {
+        "type": "event",
+        "content": "Started developing game plugins in Java"
+    },
+    {
+        "type": "date",
+        "content": "2013"
+    },
+    {
+        "type": "event",
+        "content": "My first YouTube channel"
+    },
+    {
+        "type": "event",
+        "content": "Started selling stock graphics online"
+    },
+    {
+        "type": "event",
+        "content": "Got my first copy of Photoshop CS4"
+    },
+    {
+        "type": "date",
+        "content": "2012"
+    },
+    {
+        "type": "event",
+        "content": "Created my first HTML only website"
+    },
+    {
+        "type": "date",
+        "content": "2009"
+    }
+]
