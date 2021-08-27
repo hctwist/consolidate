@@ -4,6 +4,8 @@ title: Henry Twist
 styles: styles/index.css
 ---
 
+<div id="blob"></div>
+
 <p id="main-display-text">Hello<span>.</span></p>
 
 <div id="sub-display-text" class="flex-gap">
@@ -12,7 +14,7 @@ styles: styles/index.css
     <p class="suffix">MATHEMATICIAN. DESIGNER. DEVELOPER. TECH ENTHUSIAST</p>
 </div>
 
-<div id="timeline">
+<div id="timeline" style="display: none">
 
     {%- assign right = true -%}
     {%- for entry in timeline -%}
@@ -69,3 +71,4 @@ styles: styles/index.css
 
 <script src="/js/timeline.js"></script>
 <script src="/js/display-text.js"></script>
+<script src="/js/blob.js"></script>

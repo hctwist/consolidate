@@ -58,6 +58,14 @@
     padding-top: var(--content-margin);
 }
 
+#project-sources a {
+    transition: transform var(--transition-duration-panel);
+}
+
+#project-sources a:hover {
+    transform: scale(0.97);
+}
+
 #project-skills {
     --gap: var(--standard-margin);
 

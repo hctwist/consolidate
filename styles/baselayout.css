@@ -1,11 +1,9 @@
-#main-header-container {
 
+#main-header-container {
     padding-bottom: 2vh;
 }
 
 #main-header {
-    --spacing: 64px;
-
     display: flex;
     align-items: center;
 
@@ -23,6 +21,9 @@
 
     height: 16px;
     padding: 12px;
+
+    opacity: 0.85;
+    transition: opacity var(--transition-duration-panel);
 }
 
 #main-logo img.colored {
@@ -32,12 +33,14 @@
     left: 0;
 
     opacity: 0;
-
-    transition: opacity var(--transition-duration-panel);
 }
 
 #main-logo:hover img.colored {
     opacity: 1;
+}
+
+#main-logo:hover img {
+    opacity: 0;
 }
 
 #main-navigation {
@@ -49,34 +52,50 @@
 #main-header ul {
     list-style-type: none;
 
-    margin-right: var(--spacing);
+    margin-right: 128px;
 }
 
 #main-header ul li {
     display: inline-block;
-    margin-left: var(--spacing);
+    margin-left: 64px;
 }
 
 #main-header ul li a {
+    position: relative;
     display: block;
 
-    padding: 16px;
+    padding: 16px 24px 16px 16px;
 
     font-size: 1em;
     font-weight: bold;
     text-decoration: none;
     border-radius: var(--corner-radius);
-
-    transition: color 200ms, background-color 200ms;
 }
 
-#main-header ul li a:hover {
-    color: #000;
-    background-color: white;
+#main-header ul li a::after {
+    content: "";
+    position: absolute;
+
+    right: 100%;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 6px;
+    height: 6px;
+
+    opacity: 0;
+    border-radius: 50%;
+    background: var(--primary-color);
+    transition: right 300ms, opacity 300ms;
 }
 
-#main-header ul li a:hover::after {
+#main-header ul li a:hover::after, #main-header ul li a.selected::after {
+    right: 0;
+
     opacity: 1;
+}
+
+#main-header ul li a.selected::after {
+    background: var(--text-color-secondary);
 }
 
 #main-links {
@@ -99,7 +118,9 @@
     display: block;
 
     width: var(--medium-icon-size);
-    height: var(--medium-icon-size);;
+    height: var(--medium-icon-size);
+
+    opacity: 0.85;
 }
 
 #hamburger {
@@ -182,7 +203,7 @@
         top: 0;
         left: 0;
 
-        background: #131414;
+        background: #F2F2F2;
 
         transition: visibility 200ms, opacity 200ms;
         visibility: hidden;

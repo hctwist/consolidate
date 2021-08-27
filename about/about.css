@@ -9,7 +9,7 @@
     height: 256px;
     margin: 0 auto;
 
-    background: #464847;
+    background: var(--panel-color);
     border-radius: 50%;
 }
 @media (max-width: 1600px) {
@@ -105,7 +105,7 @@ h1 {
 }
 
 .skill-level {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .skill-level-high {
@@ -113,5 +113,5 @@ h1 {
 }
 
 .skill-level-container {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
 }
