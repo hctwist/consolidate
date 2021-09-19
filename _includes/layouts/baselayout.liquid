@@ -15,11 +15,12 @@
         <title>{{ title }}</title>
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="/styles/base.css" />
         <link rel="stylesheet" href="/styles/baselayout.css" />
-        <link rel="stylesheet" href="/styles/status-tags.css" />
+        <link rel="stylesheet" href="/styles/main-header.css" />
         {%- for style in styles -%}
         <link rel="stylesheet" href="{{ style }}" />
         {%- endfor -%}
@@ -34,61 +35,6 @@
     </head>
 
     <body>
-
-        <div id="main-header-container">
-
-            <header id="main-header" class="main-content-grid">
-
-                <a id="main-logo" href="/">
-
-                    <img src="/images/logo.png" alt="Logo" />
-                    <img class="colored" src="/images/logo-colored.png" />
-                </a>
-
-                <button type="button" id="hamburger" onclick="onClickHamburger()"><img src="/images/icons/hamburger.svg" alt="Menu button" /></button>
-
-                <div id="main-navigation">
-
-                    <nav>
-                        <ul>
-                            <li><a href="/about" {%- if page.url contains '/about' -%}class="selected"{%- endif -%}>ABOUT</a></li>
-                            <li><a href="/projects" {%- if page.url contains '/project' -%}class="selected"{%- endif -%}>PROJECTS</a></li>
-                        </ul>
-                    </nav>
-
-                    <div id="main-links">
-
-                        <a href="mailto:henrytwistprojects@gmail.com">
-
-                            <img src="/images/icons/email.png" alt="Email me" />
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/henry-twist" target="_blank">
-
-                            <img src="/images/icons/linkedin.png" alt="LinkedIn" />
-                        </a>
-
-                        <a href="https://github.com/hctwist" target="_blank">
-
-                            <img src="/images/icons/github.png" alt="GitHub" />
-                        </a>
-
-                        <a href="https://stackoverflow.com/users/10082297/henry-twist" target="_blank">
-
-                            <img src="/images/icons/stackoverflow.png" alt="StackOverflow" />
-                        </a>
-                    </div>
-                </div>
-            </header>
-        </div>
-
-        <div class="main-content-grid" id="main-content">
-
-            {{ content }}
-        </div>
-
-        <div id="hamburger-menu-cover" onclick="onClickHamburger()"></div>
-
-        <script src="/js/hamburger.js"></script>
+        {{ content }}
     </body>
 </html>

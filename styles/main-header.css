@@ -1,0 +1,33 @@
+
+#main-logo {
+    display: inline-block;
+    position: relative;
+
+    top: -12px;
+    left: -12px;
+}
+
+#main-logo img {
+    height: 24px;
+    padding: 12px;
+
+    opacity: 0.85;
+    transition: opacity 200ms;
+}
+
+#main-logo img.colored {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+}
+
+#main-logo:hover img.colored {
+    opacity: 1;
+}
+
+#main-logo:hover img {
+    opacity: 0;
+}

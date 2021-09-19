@@ -4,73 +4,31 @@ title: Henry Twist
 styles: styles/index.css
 ---
 
-<canvas id="mesh-canvas"></canvas>
-<div id="blob"></div>
+<!-- Home -->
+<div id="home-container" class="main-content-grid">
+    {%- include components/main-header -%}
 
-<p id="main-display-text">Hello<span>.</span></p>
+    <div id="home-footer">
+        <h1 id="home-quote">I am a Mathematician,<br />Designer and Software Developer</h1>
 
-<div id="sub-display-text" class="flex-gap">
+        <ul id="home-links" class="link-set">
 
-    <p class="prefix">I AM A</p>
-    <p class="suffix">MATHEMATICIAN. DESIGNER. DEVELOPER. TECH ENTHUSIAST</p>
+            <li><a href="mailto:henrytwistprojects@gmail.com">Email me</a></li>
+            <li><a class="linkedin" href="https://www.linkedin.com/in/henry-twist" target="_blank">LinkedIn</a></li>
+            <li><a class="github" href="https://github.com/hctwist" target="_blank">GitHub</a></li>
+            <li><a class="stackoverflow" href="https://stackoverflow.com/users/10082297/henry-twist" target="_blank">StackOverflow</a></li>
+        </ul>
+    </div>
 </div>
 
-<div id="timeline" style="display: none">
+<!-- Projects -->
+<div id="projects-container" class="main-content-grid">
 
-    {%- assign right = true -%}
-    {%- for entry in timeline -%}
+    {%- assign projects = collections.project | sortprojects -%}
+    {%- for proj in projects -%}
+        <a class="project" href="{{ proj.url }}">
 
-        {%- if entry.type == "date" -%}
-
-            <div class="date">
-                <p class="content">{{ entry.content }}</p>
-            </div>
-        {%- elsif entry.type == "event" -%}
-
-            {%- if entry.subheading == blank or entry.content == blank -%}
-                {%- assign contentClass = "content" -%}
-            {%- else -%}
-                {%- assign contentClass = "content with-subheading" -%}
-            {%- endif -%}
-
-            {% capture pipe %}<div class="pipe"></div>{% endcapture %}
-            {% capture content %}<p class="{{ contentClass }}">{{ entry.content }}</p>{% endcapture %}
-            {% capture subheading %}<h3>{{ entry.subheading | safeupcase }}</h3>{% endcapture %}
-
-            {%- if entry.link == blank -%}
-                {% capture boxStart %}<div class="panel">{% endcapture %}
-                {% capture boxEnd %}</div>{% endcapture %}
-            {%- else -%}
-                {% capture boxStart %}<a href="{{ entry.link }}" class="panel">{% endcapture %}
-                {% capture boxEnd %}</a>{% endcapture %}
-            {%- endif -%}
-
-            {%- if right -%}
-                <div class="event right">
-                    {{ pipe }}
-                    {{ boxStart }}
-                        {{ content }}
-                        {{ subheading }}
-                    {{ boxEnd }}
-                </div>
-                {%- assign right = false -%}
-            {%- else -%}
-                <div class="event left">
-                    {{ boxStart }}
-                        {{ content }}
-                        {{ subheading }}
-                    {{ boxEnd }}
-                    {{ pipe }}
-                </div>
-                {%- assign right = true -%}
-            {%- endif -%}
-
-        {%- endif -%}
-
+            <img src="{{ proj.data.shots[0].source }}" />
+        </a>
     {%- endfor -%}
 </div>
-
-<script src="/js/timeline.js"></script>
-<script src="/js/display-text.js"></script>
-<script src="/js/blob.js"></script>
-<script src="/js/mesh.js"></script>

@@ -1,10 +1,10 @@
 /* Status tag */
 .status-tag {
-    padding: 6px 12px;
+    display: inline-block;
 
-    border-radius: var(--corner-radius);
+    padding: 8px 24px;
+
     font-family: "Lato", sans-serif;
-    color: rgba(0, 0, 0, 0.5);
 }
 
 .status-tag-concept {

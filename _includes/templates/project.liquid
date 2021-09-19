@@ -1,82 +1,66 @@
 ---
 layout: layouts/baselayout
-styles: /project/project.css
+styles:
+  - /project/project.css
+  - /styles/status-tags.css
 ---
 
-<div id="project-header-container">
+{%- include components/main-header -%}
 
-    <div id="project-heading-container">
+<div id="project-heading" class="main-content-grid">
 
-        <h1 id="project-heading">{{ heading }}</h1>
-        <h3>{{ subheading | safeupcase }}</h3>
+    <h1>{{ heading }}</h1>
+    <div id="project-skills">
+
+        {%- for skill in skills -%}
+
+        {%- if skills-used contains skill.skill -%}
+
+        <img src="/images/skills/{{ skill.skill }}.png" alt="{{ skill.title }}" class="skill" />
+        {%- endif -%}
+        {%- endfor -%}
     </div>
     {%- include components/status-tag -%}
 </div>
 
-<div id="project-content">
+<div id="project-content" class="main-content-grid">
 
     {{ content }}
 </div>
 
-<div id="project-images">
+<div id="project-images" class="main-content-grid">
 
     {%- for shot in shots -%}
 
         <div class="project-image {{ shot.type }}">
 
             <img src="{{ shot.source }}"/>
-
-            {%- if shot.tag != blank -%}
-
-                <p>{{ shot.tag }}</p>
-            {%- endif -%}
         </div>
     {%- endfor -%}
 </div>
 
-<div id="project-sources" class="flex-gap">
+<ul id="project-sources" class="link-set main-content-grid">
 
     {%- if github-repository != blank -%}
 
-        <a class="project-badge" href="{{ github-repository }}" target="_blank">
-            <img alt="View the code on GitHub" src="/images/badges/github.png" />
-        </a>
+        <li><a class="h1" href="{{ github-repository }}" target="_blank">View on GitHub</a></li>
     {%- endif -%}
 
     {%- if play-store-url != blank -%}
 
-        <a class="project-badge" href="{{ play-store-url }}&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">
-            <img alt="Get it on Google Play" src="/images/badges/play-store.png" />
-        </a>
+        <li><a class="h1" href="{{ play-store-url }}&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">View on Google Play</a></li>
     {%- endif -%}
 
     {%- if microsoft-store-id != blank -%}
 
-        <a class="project-badge" href="//www.microsoft.com/store/apps/{{ microsoft-store-id }}?cid=storebadge&ocid=badge" target="_blank">
-            <img src="/images/badges/microsoft-store.png" alt="Get it on the Microsoft Store" />
-        </a>
+        <li><a class="h1" href="//www.microsoft.com/store/apps/{{ microsoft-store-id }}?cid=storebadge&ocid=badge" target="_blank">View on the Microsoft Store</a></li>
     {%- endif -%}
 
     {%- if open != blank -%}
 
-        <a class="icon-button" href="{{ open }}" target="_blank">
-
-            <img src="/images/icons/open.svg" />
-            <p>Open</p>
-        </a>
+        <li><a class="h1" href="{{ open }}" target="_blank">Open</a></li>
     {%- endif -%}
-</div>
-
-<div id="project-skills" class="flex-gap">
-
-    {%- for skill in skills -%}
-
-        {%- if skills-used contains skill.skill -%}
-
-            <img src="/images/skills/{{ skill.skill }}.png" alt="{{ skill.title }}" class="skill" />
-        {%- endif -%}
-    {%- endfor -%}
-</div>
+</ul>
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -138,11 +122,8 @@ styles: /project/project.css
             <div class="pswp__caption">
                 <div class="pswp__caption__center"></div>
             </div>
-
         </div>
-
     </div>
-
 </div>
 
 <script>

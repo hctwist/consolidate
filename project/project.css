@@ -1,24 +1,50 @@
-#project-header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
+
+header {
+    margin: var(--layout-margin);
+    margin-bottom: 0;
 }
 
-#project-heading-container {
-    margin-right: 32px;
+#project-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    margin-top: var(--section-gap);
+    gap: 32px;
+}
+
+#project-heading h1 {
+    flex-grow: 1;
+}
+
+#project-skills {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 24px;
+}
+
+#project-skills .skill {
+    width: 24px;
+    height: 24px;
 }
 
 #project-content {
-    margin-top: 32px;
+    margin-top: 64px;
 }
 
 #project-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    margin-top: var(--content-margin);
+    margin-top: var(--section-gap);
     gap: 2vw;
+}
+@media (max-width: 1200px) {
+    #project-images {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 .project-image {
@@ -29,64 +55,20 @@
     width: 100%;
 }
 
-.project-image p {
-    position: absolute;
-
-    right: 0;
-    bottom: 0;
-    margin: 0 16px 16px 0;
-    padding: 8px 16px;
-
-    border-radius: var(--corner-radius);
-    background: #FFF;
-    color: var(--text-color-inverse);
-}
-
 .banner {
     grid-column: 1 / span 2;
 }
 
 #project-sources {
-    --gap: var(--standard-margin);
-
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: flex-end;
+
+    column-gap: 64px;
+    row-gap: 16px;
+    margin-bottom: var(--layout-margin);
 }
 
 #project-sources:not(:empty) {
-    padding-top: var(--content-margin);
-}
-
-#project-sources a {
-    transition: transform var(--transition-duration-panel);
-}
-
-#project-sources a:hover {
-    transform: scale(0.97);
-}
-
-#project-skills {
-    --gap: var(--standard-margin);
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    padding-top: var(--content-margin);
-    padding-bottom: var(--layout-margin-bottom);
-}
-
-#project-skills .skill {
-    width: 32px;
-    height: 32px;
-
-    opacity: var(--icon-opacity);
-}
-
-@media (max-width: 700px) {
-
-    .project-image p {
-        display: none;
-    }
+    padding-top: var(--section-gap);
 }
