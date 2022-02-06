@@ -1,24 +1,33 @@
 ---
 layout: layouts/baselayout
 title: Henry Twist
-styles: styles/index.css
+styles:
+  - styles/index.css
+  - /styles/components.css
 ---
 
 <!-- Home -->
 <div id="home-container" class="main-content-grid">
-    {%- include components/main-header -%}
 
-    <div id="home-footer">
-        <h1 id="home-quote">I am a Mathematician,<br />Designer and Software Developer</h1>
+	{%- include components/main-header -%}
 
-        <ul id="home-links" class="link-set">
+	<h1>Henry Twist<span class="full-stop">.</span></h1>
 
-            <li><a href="mailto:henrytwistprojects@gmail.com">Email me</a></li>
-            <li><a class="linkedin" href="https://www.linkedin.com/in/henry-twist" target="_blank">LinkedIn</a></li>
-            <li><a class="github" href="https://github.com/hctwist" target="_blank">GitHub</a></li>
-            <li><a class="stackoverflow" href="https://stackoverflow.com/users/10082297/henry-twist" target="_blank">StackOverflow</a></li>
-        </ul>
-    </div>
+	<p class="home-detail">University of Bath <span>MMath</span> graduate, working in <span>London</span> as a <span>Software Developer</span> for Ion Asset Architecture</p>
+
+	<div id="home-links">
+		<p>Find me on
+		<span class="extra-padding"></span>
+		<a class="button stackoverflow" href="https://stackoverflow.com/users/10082297/henry-twist" target="_blank">Stack Overflow</a>,
+		<span class="extra-padding"></span>
+		<a class="button github" href="https://github.com/hctwist" target="_blank">GitHub</a></li>,
+		<span class="extra-padding"></span>
+		<a class="button linkedin" href="https://www.linkedin.com/in/henry-twist" target="_blank">LinkedIn</a>
+		<span class="extra-padding"></span>
+		or
+		<span class="extra-padding"></span>
+		<a class="button email" href="mailto:henrytwistprojects@gmail.com">email me.</a>
+	</div>
 </div>
 
 <!-- Projects -->

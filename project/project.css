@@ -1,7 +1,6 @@
 
-header {
-    margin: var(--layout-margin);
-    margin-bottom: 0;
+#main-header {
+	margin-top: var(--layout-margin);
 }
 
 #project-heading {
@@ -27,6 +26,8 @@ header {
 #project-skills .skill {
     width: 24px;
     height: 24px;
+
+	filter: invert(1);
 }
 
 #project-content {
@@ -48,11 +49,14 @@ header {
 }
 
 .project-image {
-    position: relative;
+	border-radius: var(--border-radius);
+
+	overflow: hidden;
 }
 
 .project-image img {
     width: 100%;
+	height: 100%;
 }
 
 .banner {

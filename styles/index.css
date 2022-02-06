@@ -1,80 +1,92 @@
+:root {
+	--home-section-gap: 15vh;
+}
+@media (max-width: 1200px) {
+	:root {
+		--home-section-gap: 10vh;
+	}
+}
 
 #home-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
+	margin-top: var(--layout-margin);
+}
 
-    height: 100vh;
-    padding: var(--layout-margin) 0;
+#home-container h1 {
+	margin-top: var(--home-section-gap);
+
+	font-size: 10.5em;
 }
 @media (max-width: 1200px) {
-    #home-container {
-        display: block;
-
-        height: auto;
-    }
+	#home-container h1 {
+		font-size: 6.5em;
+	}
 }
 
-#home-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+#home-container h1 .full-stop {
+	color: var(--accent-color);
+}
+
+.home-detail, #home-links p {
+	color: var(--text-color-secondary);
+}
+
+.home-detail, #home-links p, #home-links a {
+	font-size: 1.875rem;
 }
 @media (max-width: 1200px) {
-    #home-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--section-gap);
-
-        margin-top: var(--section-gap);
-    }
+	.home-detail, #home-links p, #home-links a {
+		font-size: 1.5rem;
+	}
 }
 
 #home-links {
-    text-align: right;
+	margin-top: var(--home-section-gap);
 }
-@media (max-width: 1200px) {
-    #home-links {
-        text-align: left;
-    }
+
+#home-links p {
+	line-height: calc(2em + 16px);
+	color: var(--text-color-secondary);
+}
+
+#home-links .extra-padding {
+	margin-left: 8px;
 }
 
 #home-links .linkedin:hover {
-    color: #0E76A8;
+    background-color: #0E76A8;
 }
 
 #home-links .github:hover {
-    color: #24292f;
+    background-color: #24292f;
 }
 
 #home-links .stackoverflow:hover {
-    color: #f48024;
+    background-color: #f48024;
+}
+
+#home-links .email:hover {
+	color: var(--text-color-inverse);
+	background-color: #FFF;
 }
 
 #projects-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    gap: 5vh;
-    margin-top: var(--section-gap);
-    margin-bottom: var(--section-gap);
+    gap: 32px;
+    margin-top: var(--home-section-gap);
+    margin-bottom: var(--layout-margin);
 }
-@media (max-width: 1200px) {
-    #projects-container {
-        grid-template-columns: auto;
-
-        margin-left: 0;
-        margin-right: 0;
-    }
+@media (max-width: 1600px) {
+	#projects-container {
+		grid-template-columns: 1fr;
+	}
 }
 
 .project {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    margin: 0;
+	border-radius: var(--border-radius);
+
+	overflow: hidden;
 }
 
 .project img {
@@ -82,6 +94,8 @@
     height: 100%;
 
     filter: grayscale();
+	
+	overflow: hidden;
 
     transition: transform 0.3s, filter 0.7s;
 }

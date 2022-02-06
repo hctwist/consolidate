@@ -17,6 +17,7 @@
         }
     ],
     "github-repository": "https://github.com/hctwist/barry",
+	"play-store-url": "https://play.google.com/store/apps/details?id=uk.henrytwist.projectbarry",
     "skills-used": ["kotlin", "android", "sqlite"],
     "importance": 6
 }

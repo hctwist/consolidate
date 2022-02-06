@@ -8,11 +8,14 @@
 }
 
 #main-logo img {
-    height: 24px;
+    height: 18px;
     padding: 12px;
 
-    opacity: 0.85;
     transition: opacity 200ms;
+}
+
+#main-logo img:not(.colored) {
+	filter: invert(100);
 }
 
 #main-logo img.colored {

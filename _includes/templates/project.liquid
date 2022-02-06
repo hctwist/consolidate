@@ -5,62 +5,64 @@ styles:
   - /styles/status-tags.css
 ---
 
-{%- include components/main-header -%}
+<div class="main-content-grid">
+	{%- include components/main-header -%}
 
-<div id="project-heading" class="main-content-grid">
+	<div id="project-heading">
 
-    <h1>{{ heading }}</h1>
-    <div id="project-skills">
+		<h1>{{ heading }}</h1>
+		<div id="project-skills">
 
-        {%- for skill in skills -%}
+			{%- for skill in skills -%}
 
-        {%- if skills-used contains skill.skill -%}
+			{%- if skills-used contains skill.skill -%}
 
-        <img src="/images/skills/{{ skill.skill }}.png" alt="{{ skill.title }}" class="skill" />
-        {%- endif -%}
-        {%- endfor -%}
-    </div>
-    {%- include components/status-tag -%}
+			<img src="/images/skills/{{ skill.skill }}.png" alt="{{ skill.title }}" class="skill" />
+			{%- endif -%}
+			{%- endfor -%}
+		</div>
+		{%- include components/status-tag -%}
+	</div>
+
+	<div id="project-content">
+
+		{{ content }}
+	</div>
+
+	<div id="project-images">
+
+		{%- for shot in shots -%}
+
+			<div class="project-image {{ shot.type }}">
+
+				<img src="{{ shot.source }}"/>
+			</div>
+		{%- endfor -%}
+	</div>
+
+	<ul id="project-sources" class="link-set">
+
+		{%- if github-repository != blank -%}
+
+			<li><a class="button" href="{{ github-repository }}" target="_blank">View on GitHub</a></li>
+		{%- endif -%}
+
+		{%- if play-store-url != blank -%}
+
+			<li><a class="button" href="{{ play-store-url }}&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">View on Google Play</a></li>
+		{%- endif -%}
+
+		{%- if microsoft-store-id != blank -%}
+
+			<li><a class="button" href="//www.microsoft.com/store/apps/{{ microsoft-store-id }}?cid=storebadge&ocid=badge" target="_blank">View on the Microsoft Store</a></li>
+		{%- endif -%}
+
+		{%- if open != blank -%}
+
+			<li><a class="button" href="{{ open }}" target="_blank">Open</a></li>
+		{%- endif -%}
+	</ul>
 </div>
-
-<div id="project-content" class="main-content-grid">
-
-    {{ content }}
-</div>
-
-<div id="project-images" class="main-content-grid">
-
-    {%- for shot in shots -%}
-
-        <div class="project-image {{ shot.type }}">
-
-            <img src="{{ shot.source }}"/>
-        </div>
-    {%- endfor -%}
-</div>
-
-<ul id="project-sources" class="link-set main-content-grid">
-
-    {%- if github-repository != blank -%}
-
-        <li><a class="h1" href="{{ github-repository }}" target="_blank">View on GitHub</a></li>
-    {%- endif -%}
-
-    {%- if play-store-url != blank -%}
-
-        <li><a class="h1" href="{{ play-store-url }}&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">View on Google Play</a></li>
-    {%- endif -%}
-
-    {%- if microsoft-store-id != blank -%}
-
-        <li><a class="h1" href="//www.microsoft.com/store/apps/{{ microsoft-store-id }}?cid=storebadge&ocid=badge" target="_blank">View on the Microsoft Store</a></li>
-    {%- endif -%}
-
-    {%- if open != blank -%}
-
-        <li><a class="h1" href="{{ open }}" target="_blank">Open</a></li>
-    {%- endif -%}
-</ul>
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
