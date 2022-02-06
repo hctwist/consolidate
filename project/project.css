@@ -68,8 +68,8 @@
     flex-wrap: wrap;
     justify-content: flex-end;
 
-    column-gap: 64px;
-    row-gap: 16px;
+    column-gap: 32px;
+    row-gap: 32px;
     margin-bottom: var(--layout-margin);
 }
 
