@@ -1,0 +1,13 @@
+h1 {
+	margin: var(--section-gap) 0;
+}
+
+h2 {
+	margin-top: 32px;
+	margin-bottom: 16px;
+}
+
+h3 {
+	margin-top: 16px;
+	margin-bottom: 8px;
+}
