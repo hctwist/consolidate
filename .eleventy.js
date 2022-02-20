@@ -1,10 +1,13 @@
 
 module.exports = function(eleventyConfig) {
 
+	eleventyConfig.setTemplateFormats(["liquid", "md", "css"]);
+
     eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addPassthroughCopy("js");
     eleventyConfig.addPassthroughCopy("downloads");
     eleventyConfig.addPassthroughCopy("photo-swipe");
+	eleventyConfig.ignores.add("photo-swipe");
 
     eleventyConfig.addPassthroughCopy("CNAME");
     eleventyConfig.addPassthroughCopy("android-chrome-192x192.png");
@@ -17,8 +20,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("mstile-150x150.png");
     eleventyConfig.addPassthroughCopy("safari-pinned-tab.svg");
     eleventyConfig.addPassthroughCopy("site.webmanifest");
-
-    eleventyConfig.setTemplateFormats(["liquid", "md", "css"]);
 
     eleventyConfig.addFilter("spaceifempty", function(text) {
 

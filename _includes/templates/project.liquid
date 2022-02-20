@@ -6,7 +6,7 @@ styles:
 ---
 
 <div class="main-content-grid">
-	{%- include components/main-header -%}
+	{%- include "components/main-header" -%}
 
 	<div id="project-heading">
 
@@ -21,7 +21,7 @@ styles:
 			{%- endif -%}
 			{%- endfor -%}
 		</div>
-		{%- include components/status-tag -%}
+		{%- include "components/status-tag" -%}
 	</div>
 
 	<div id="project-content">

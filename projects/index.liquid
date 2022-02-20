@@ -16,7 +16,7 @@ title: Projects | Henry Twist
 
             <div class="project-extras">
                 <h3 class="project-subheading">{{ proj.data.subheading |  safeupcase | spaceifempty }}</h3>
-                {%- include components/status-tag, status: proj.data.status -%}
+                {%- include "components/status-tag", status: proj.data.status -%}
             </div>
         </a>
     {%- endfor -%}
